@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vanilla Operações</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"></div>
+<main>
+<header class="hero card">
+  <div class="brand"><img src="assets/vanilla-logo.png"><div><h1>Vanilla Operações</h1><p>Bem-vindo, <b id="userName">nazare veneno</b></p></div></div>
+  <div class="admin">👑 Admin</div>
+</header>
+
+<div class="toolbar"><button class="soft">📋 Sair</button><button class="soft" onclick="refreshHistory()">🔄 Atualizar histórico</button></div>
+<nav class="tabs">
+<button class="active" onclick="showTab('operacoes',this)">💰 Operações</button>
+<button onclick="showTab('farm',this)">🌱 Farm</button>
+<button onclick="showTab('binds',this)">🔥 Binds</button>
+<button onclick="showTab('acoes',this)">🔨 Ações</button>
+<button onclick="showTab('festa',this)">🎉 Festa</button>
+</nav>
+
+<section id="operacoes" class="tab">
+<div class="grid">
+  <article class="card panel"><h2>🛒 Venda</h2>
+    <select id="item"><option>Capuz</option><option>Coletes</option><option>Kit</option><option>Outros</option></select>
+    <select id="parceria"><option>Com parceria</option><option>Sem parceria</option></select>
+    <input id="qtd" type="number" min="1" value="1" placeholder="Quantidade">
+    <button onclick="calcVenda()">Calcular venda</button>
+    <div id="vendaOut" class="result">Aguardando cálculo.</div>
+  </article>
+  <article class="card panel"><h2>🧼 Lavagem</h2>
+    <input id="lavValor" type="number" placeholder="Valor">
+    <input id="lavQtd" type="number" min="1" value="20">
+    <button onclick="calcLavagem()">Calcular lavagem</button>
+    <div id="lavOut" class="result">Aguardando cálculo.</div>
+  </article>
+</div>
+<div class="grid">
+  <article class="card panel"><h2>🔧 Desmanche</h2>
+    <input id="desValor" type="number" placeholder="Valor">
+    <input id="desQtd" type="number" min="1" value="20">
+    <button onclick="calcDesmanche()">Calcular desmanche</button>
+    <div id="desOut" class="result">Aguardando cálculo.</div>
+  </article>
+  <article class="card panel"><h2>🤝 Consulta de Parceria</h2>
+    <input id="farc" placeholder="Digite o nome da FARC">
+    <button onclick="consulta()">Consultar</button>
+    <div id="parOut" class="result">Digite o nome da FARC para consultar.</div>
+  </article>
+</div>
+</section>
+
+<section id="farm" class="tab hidden"><div class="card panel large"><h2>🌱 Farm</h2><p>Controle de produção, quantidade e registros de farm.</p><button onclick="alert('Módulo Farm preparado para a próxima configuração.')">Abrir módulo</button></div></section>
+<section id="binds" class="tab hidden"><div class="card panel large"><h2>🔥 Binds</h2><p>Área para consultar e organizar binds da equipe.</p><button onclick="alert('Módulo Binds preparado para a próxima configuração.')">Abrir módulo</button></div></section>
+<section id="acoes" class="tab hidden"><div class="card panel large"><h2>🔨 Ações</h2><p>Registre e acompanhe ações operacionais.</p><button onclick="alert('Módulo Ações preparado para a próxima configuração.')">Abrir módulo</button></div></section>
+<section id="festa" class="tab hidden"><div class="card panel large"><h2>🎉 Festa</h2><p>Controle de eventos e operações da Vanilla.</p><button onclick="alert('Módulo Festa preparado para a próxima configuração.')">Abrir módulo</button></div></section>
+
+<section class="card history"><h2>📜 Meu Histórico</h2><div id="historyList"><div class="historyItem"><b>Venda</b><small>2026-08-15T00:28:46.159Z</small><span>📦 Item: Colete</span><span>🤝 Tipo: Com parceria</span><span>💰 Unitário: R$ 14.580,00</span><span>📊 Quantidade: 15</span><span>💰 Total: R$ 218.700,00</span><span>👤 Operador 30%: R$ 65.610,00</span><span>🏢 FARC 70%: R$ 153.090,00</span></div></div></section>
+
+<footer>⚙ Desenvolvido por <b>AlfaTecnologia</b> &nbsp;•&nbsp; Todos os direitos de vendas reservados</footer>
+</main>
+<script src="script.js"></script>
+</body></html>
